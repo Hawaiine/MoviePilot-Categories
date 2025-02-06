@@ -20,10 +20,10 @@ movie:
     original_language: 'zh,cn'
   电影/日韩电影:
     origin_country: 'JP,KP,KR'
-  电影/欧美电影:
-    origin_country: 'US,FR,GB,DE,ES,IT,NL,PT,RU,UK'
   电影/现场:
     genre_ids: '10402'
+  电影/欧美电影:
+    origin_country: 'US,FR,GB,DE,ES,IT,NL,PT,RU,UK'
   # 未匹配以上条件时，分类为外语电影
   电影/外语电影:
 
