@@ -1,0 +1,27 @@
+version: '3.3'
+services:
+  moviepilot:
+    stdin_open: true
+    tty: true
+    container_name: moviepilot
+    hostname: moviepilot
+
+    network_mode: host
+
+    volumes:
+      - '/volume2/docker/moviepilot/config:/config'
+      - '/volume2/docker/moviepilot/core:/moviepilot/.cache/ms-playwright'
+      - '/var/run/docker.sock:/var/run/docker.sock:ro'
+      - '/volume2/media:/media'
+
+    environment:
+      - 'NGINX_PORT=12345'
+      - 'PORT=12345'
+      - 'PUID=0'
+      - 'PGID=0'
+      - 'UMASK=000'
+      - 'TZ=Asia/Shanghai'
+      - 'SUPERUSER=moviepilot'
+
+    restart: always
+    image: jxxghp/moviepilot-v2:latest
